@@ -2,6 +2,9 @@
 def disp():
 	for x in range(n):
 		print(R[x])
+	print("\n")
+
+
 n=int(input("Enter the number of vertices: "))
 A=[[0 for i in range(n)] for j in range(n)]
 for i in range(n):
@@ -10,6 +13,8 @@ for i in range(n):
 R=A
 print("adjacency Matrix: ")
 disp()
+
+#warshall algo
 for k in range(n):	
 	for i in range(n):
 		for j in range(n):
@@ -18,4 +23,52 @@ for k in range(n):
 	print("R(",k,"): ")
 	disp()
 
+
+
+"""
+OUTPUT
+Enter the number of vertices: 4
+Enter adjacency matrix row  0 : 
+0 1 0 0
+Enter adjacency matrix row  1 : 
+0 0 0 1
+Enter adjacency matrix row  2 : 
+0 0 0 0
+Enter adjacency matrix row  3 : 
+1 0 1 0
+adjacency Matrix: 
+[0, 1, 0, 0]
+[0, 0, 0, 1]
+[0, 0, 0, 0]
+[1, 0, 1, 0]
+
+
+R( 0 ): 
+[0, 1, 0, 0]
+[0, 0, 0, 1]
+[0, 0, 0, 0]
+[1, 1, 1, 0]
+
+
+R( 1 ): 
+[0, 1, 0, 1]
+[0, 0, 0, 1]
+[0, 0, 0, 0]
+[1, 1, 1, 1]
+
+
+R( 2 ): 
+[0, 1, 0, 1]
+[0, 0, 0, 1]
+[0, 0, 0, 0]
+[1, 1, 1, 1]
+
+
+R( 3 ): 
+[1, 1, 1, 1]
+[1, 1, 1, 1]
+[0, 0, 0, 0]
+[1, 1, 1, 1]
+
+"""
 
