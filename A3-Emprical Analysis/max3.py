@@ -44,6 +44,37 @@ def max_overlap(a,low,high,mid):
 			rightsum=sum
 	return leftsum+rightsum
 
+"""Easier code:def maxsubarrsum(a,l,u):
+	if(u==l):
+		return a[l]
+
+	mid=(l+u)//2
+	lss=rss=-1000
+	sum=0
+	for i in range (mid,l-1,-1):
+		sum+=a[i]
+		lss=max(lss,sum)
+	
+	sum=0
+	for i in range (mid+1,u+1):
+		sum+=a[i]
+		rss=max(rss,sum)
+	return max(maxsubarrsum(a,l,mid),maxsubarrsum(a,mid+1,u),lss+rss)
+
+
+
+
+n=int(input("Enter n : "))
+a=[]
+for i in range(n):
+	a.append(int(input("Enter the element:")))
+print("Max subarray sum is:",maxsubarrsum(a,0,n-1))
+
+
+
+
+"""
+
 print("input array: [-2,-4,3,-1,5,6,-7,-2,4,3,2],maximum subarray sum: ",max_subarray_sum_linearithmic([-2,-4,3,-1,5,6,-7,-2,4,3,2],0,10))
 print("input array: [-2,-4,-3],maximum subarray sum: ",max_subarray_sum_linearithmic([-2,-4,-3],0,2))
 print("input array: [-2,-4,3],maximum subarray sum: ",max_subarray_sum_linearithmic([-2,-4,3],0,2))
